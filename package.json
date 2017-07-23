@@ -1,0 +1,17 @@
+{
+  "name": "bgg_gwc",
+  "version": "1.0.0",
+  "description": "Board game finder for Girls Who Code",
+  "main": "gameFinder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christopher Guthrie",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "lodash": "^4.17.4",
+    "prompt": "^1.0.0",
+    "xml2json": "^0.11.0"
+  }
+}
