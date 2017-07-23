@@ -24,7 +24,8 @@ function askUserForGame(){
         bggAPIService.search(result.game)
             .then(function(results){
                 const convertedResults = utils.convertXmlStringToObject(results.data);
-                listGames(convertedResults.items.item);
+                const limitTo20 = _.take(convertedResults.items.item,20);
+                listGames(limitTo20);
             });
     });
 }
