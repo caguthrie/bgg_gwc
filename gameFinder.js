@@ -25,6 +25,7 @@ function askUserForGame(){
             .then(function(results){
                 const convertedResults = utils.convertXmlStringToObject(results.data);
                 const limitTo20 = _.take(convertedResults.items.item,20);
+                console.log(limitTo20[0]);
                 listGames(limitTo20);
             });
     });
@@ -43,7 +44,7 @@ function listGames(games){
     let message = "";
     _.each(games, (game, index) => {
         message += colors.green(`${index}) `);
-        message += colors.blue(game.name.value);
+        message += colors.blue(game.name._value);
         message += "\n";
     });
 
@@ -53,7 +54,7 @@ function listGames(games){
         if (err)
             process.exit(1);
         const gameDataFromSearch = games[parseInt(result.game)];
-        bggAPIService.getByID(gameDataFromSearch.id)
+        bggAPIService.getByID(gameDataFromSearch._id)
             .then(function(results){
                 const convertedResults = utils.convertXmlStringToObject(results.data);
                 showUserGameData(convertedResults);
