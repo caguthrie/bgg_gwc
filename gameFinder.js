@@ -25,7 +25,6 @@ function askUserForGame(){
             .then(function(results){
                 const convertedResults = utils.convertXmlStringToObject(results.data);
                 const limitTo20 = _.take(convertedResults.items.item,20);
-                console.log(limitTo20[0]);
                 listGames(limitTo20);
             });
     });
